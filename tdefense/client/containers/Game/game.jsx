@@ -59,7 +59,7 @@ class Game extends Component {
     }
 
     launchGame() {
-        const gameInstance = GameMain.run(this.state.connection, this.state.map, this.state.weapons, this.state.level);
+        const gameInstance = GameMain.run(this.state.connection, this.state.map, this.state.weapons, this.state.level, this.state.host);
         this.setState({ gameInstance });
     }
 
