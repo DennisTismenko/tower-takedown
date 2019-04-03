@@ -1,0 +1,108 @@
+.Account.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    height: 100%;
+    font-family: 'Roboto Slab', serif;
+}
+
+.Account.heading {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.75em;
+}
+
+.Account.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 1em 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 35em;
+}
+
+.Account.profile {
+    margin: 0 0.5em;
+    padding: 0 1em 0 0;
+    border-right-style: solid;
+    border-color:  rgb(46, 45, 45);
+    /* padding: 0.25em 0.5em 0.5em;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.15); */
+}
+
+.Account.inGameName {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.Account.email {
+    font-size: 1em;
+}
+
+.Account.stats{
+    margin: 0 0.5em;
+    height: 100%;
+    /* border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.15); */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Account.level {
+    margin: 0 1em;
+    font-size: 1em;
+}
+
+.Account.ex {
+    margin: 0 1em;
+    font-size: 1em;
+}
+
+.Account.gold {
+    margin: 0 1em;
+    font-size: 1em;
+}
+
+.Account.selection {
+    margin: 1em 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Account.chara {
+    margin: 1em 1em;
+    padding: 0.5em 0.5em;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.Account.map {
+    margin: 1em 1em;
+    padding: 0.5em 0.5em;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.Account > .button.btn-return{
+    font-family: 'Roboto Slab', serif;
+    margin: 0.5 em 0 0;
+
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    /* flex-grow: 1; */
+    font-weight: bold;
+    font-size: 1.25em;
+    width: 28.75em;
+}

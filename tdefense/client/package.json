@@ -1,0 +1,38 @@
+{
+  "name": "project-tdefense",
+  "version": "1.0.0",
+  "description": "## Team",
+  "main": "game.js",
+  "scripts": {
+    "clean": "rm -r -f ./dist ./.cache",
+    "build": "npm run clean && parcel build index.html",
+    "dev": "parcel --port 3000 index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UTSCC09/project-tdefense.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UTSCC09/project-tdefense/issues"
+  },
+  "homepage": "https://github.com/UTSCC09/project-tdefense#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "peerjs": "^0.3.24",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0",
+    "react-select": "^2.4.2",
+    "socket.io-client": "^2.2.0"
+  }
+}

@@ -1,0 +1,15 @@
+.Alert.container {
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.9em;
+    border: 1px solid transparent;
+    border-radius: 30px; 
+    margin-top: 1em;
+    padding: 0.5em 0.5em;
+    text-align: center;
+}
+
+.Alert.container.danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}

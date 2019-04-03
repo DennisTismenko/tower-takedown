@@ -1,0 +1,73 @@
+.MapSelect.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.MapSelect.img{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 1em;
+    width: 14em;
+    height: 10em;
+}
+
+.MapSelect.img.grass{
+    background-image: url(./grass_map.png);
+}
+
+.MapSelect.img.ice{
+    background-image: url(./ice_map.png);
+}
+
+.MapSelect.img.candy{
+    background-image: url(./candy_map.png);
+}
+
+.MapSelect.img.castle{
+    background-image: url(./castle_map.png);
+}
+
+.MapSelect > .map-select{
+    margin: 0 0 0.5em;
+}
+
+.MapSelect > .button{
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    margin: 0;
+}
+
+.MapSelect > .button.lock{
+    visibility: visible;
+}
+
+.MapSelect > .button.unlock{
+    visibility: hidden;
+}
+
+.MapSelect > .button.show{
+    visibility: visible;
+}
+
+.MapSelect > .button.hide{
+    visibility: hidden;
+}
+
+.MapSelect.errormsg{
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    margin: 0.5em 0;
+    text-align: center;
+}
+
+.MapSelect.errormsg.show{
+    visibility: visible;
+}
+
+.MapSelect.errormsg.hide{
+    visibility: hidden;
+}

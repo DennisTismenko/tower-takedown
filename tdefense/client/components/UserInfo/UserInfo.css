@@ -1,0 +1,78 @@
+.UserInfo.wrapper {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1em;
+    right: 2em;
+}
+
+.UserInfo.container {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    font-family: 'Roboto Slab', serif;
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
+.UserInfo.container:hover {
+    background-color: rgba(0, 0, 0, 0.15);;
+    cursor: pointer;
+}
+
+.UserInfo.container.selected {
+    background-color: rgba(0, 0, 0, 0.15);;
+}
+
+.UserInfo.inGameName {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.UserInfo.email {
+    font-size: 0.75em;
+}
+
+.UserInfo.profile-image {
+    background-image: url(./user-icon.svg);
+    background-size: contain;
+    margin: 0 1em 0 0;
+    width: 2em;
+    height: 2em;
+}
+
+.UserInfo.arrow-down {
+    background-image: url(./arrow-down.svg);
+    background-size: contain;
+    margin: 0 0 0 0.5em;
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.UserInfo.dropdown-container {
+    display: none;
+    position: relative;
+    font-family: 'Roboto Slab', serif;
+    width: 100%;
+    /* top: -0.4em; */
+    /* right: 0.5em; */
+    text-align: center;
+    z-index: 2;
+}
+
+.UserInfo.dropdown-container.show {
+    display: block;
+}
+
+.UserInfo.dropdown-container > div {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    padding: 0.5em 1em;
+}
+
+.UserInfo.dropdown-container > div:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}

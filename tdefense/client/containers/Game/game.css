@@ -1,0 +1,33 @@
+.Game.container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Game.content {
+    border: solid 5px;
+    border-radius: 5px;
+    margin: 2.5em;
+    min-width: 1050px;
+    min-height: 560px;
+}
+
+.Game.container .button {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.25em;
+    padding: 0.75em;
+    
+}
+
+.Game.container .button:disabled {
+    cursor: not-allowed;
+}
+
+.Game.container .button:hover:enabled {
+    background-color: white;
+    color: black;
+}

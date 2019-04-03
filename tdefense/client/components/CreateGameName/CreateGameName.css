@@ -1,0 +1,47 @@
+.CreateGameName.container {
+    background-color: #E9FAFB;
+    border-radius: 25px;
+    padding: 1em 2.5em;
+    max-width: 25%;
+    font-family: 'Space Mono', monospace;
+}
+
+.CreateGameName.title {
+    font-weight: bold;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0.25em;
+}
+
+.CreateGameName.form {
+    display: flex;
+    margin: 0.5em 0;
+}
+
+.CreateGameName.form > .button {
+    background-color: #73cd4b; 
+    border-radius: 5px; 
+    color: black;
+    font-weight: bold;
+    flex-grow: 1;
+    padding: 0.75em;
+    margin: 0.5em 2em;
+}
+
+.CreateGameName.form > .button:hover {
+    background-color: #B7EEA0;
+}
+
+.CreateGameName.form.input {
+    background: none;
+    border: none;
+    border-bottom: solid black 0.2px;
+    flex-grow: 2;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    transition: border-color 0.1s;
+}
+
+.CreateGameName.form:focus {
+    border-color: #e86a17;
+}

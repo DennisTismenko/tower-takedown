@@ -1,0 +1,65 @@
+.WeaponSelect.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.WeaponSelect.img{
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    margin: 1em;
+    width: 14em;
+    height: 10em;
+}
+
+.WeaponSelect.img.sword{
+    background-image: url(./alien_sword.png);
+}
+
+.WeaponSelect.img.gun{
+    background-image: url(./alien_gun.png);
+}
+
+.WeaponSelect > .weapon-select{
+    margin: 0 0 0.5em;
+}
+
+.WeaponSelect > .button{
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    margin: 0;
+}
+
+.WeaponSelect > .button.show{
+    visibility: visible;
+}
+
+.WeaponSelect > .button.hide{
+    visibility: hidden;
+}
+
+.WeaponSelect > .button.lock{
+    visibility: visible;
+}
+
+.WeaponSelect > .button.unlock{
+    visibility: hidden;
+}
+
+.WeaponSelect.errormsg{
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1em;
+    margin: 0.5em 0;
+    text-align: center;
+}
+
+.WeaponSelect.errormsg.show{
+    visibility: visible;
+}
+
+.WeaponSelect.errormsg.hide{
+    visibility: hidden;
+}

@@ -1,0 +1,19 @@
+body {
+    margin: 0 auto;
+    background-image: url(./assets/background/bg_grasslands.svg);
+    background-size: cover;
+}
+
+.App {
+    margin: auto;
+    height: 100vh;
+}
+
+.credits-link {
+    position: absolute;
+    bottom: 1em;
+    left: 49%;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}

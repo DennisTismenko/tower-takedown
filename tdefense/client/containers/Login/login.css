@@ -1,0 +1,96 @@
+.Login.heading {
+    text-align: center;
+    margin: 0 2.5em 5em 2.5em;
+    font-family: 'Space Mono', monospace;
+}
+
+.Login.heading > h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.Login.heading > h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.25em;
+}
+
+.Login.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75%;
+}
+
+.Login.processing {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.Login.form {
+    background-image: url('./grass_block.svg');
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 25em;
+    padding: 2.5em;
+    position: relative;
+}
+
+.Login.form > h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 2em;  
+    margin: auto;
+    margin-bottom: 1em; 
+}
+
+.Login.form > .input-field,.password-field,.button {
+    border: none;
+    margin: 0.5em auto;
+    padding: 0.5em;
+}
+
+.Login.form > .input-field,.password-field {
+    width: 100%;
+    border-radius: 2px; 
+}
+
+.button-bar {
+    display: flex;
+}
+
+.button-bar {
+    margin-top: 0.5em;
+}
+
+.button-bar > input {
+    flex-grow: 1;
+    margin: 0.5em;
+}
+
+.button-bar > .button:first-child {
+    margin-left: 0;
+}
+
+.button-bar > .button:last-child {
+    margin-right: 0;
+}
+
+.Login.form .button {
+    background-color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    
+}
+
+.Login.form .button:hover {
+    background-color: #ffcc00; 
+}

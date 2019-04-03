@@ -1,0 +1,82 @@
+.CreateRoom.container {
+    background-color: #E9FAFB;
+    border-radius: 25px;
+    padding: 2em 3.5em;
+    max-width: 40%;
+}
+
+.CreateRoom.title {
+    font-weight: bold;
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    margin: 0.25em;
+}
+
+.CreateRoom.form.main{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+    align-items: baseline;
+}
+
+.CreateRoom.form.main > input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* .CreateRoom.form.playerCount {
+    margin: 1em 0 0 0;
+}
+
+.CreateRoom.form.playerCount > select {
+    margin-left: 1em;
+    height: 100%; 
+} */
+
+.CreateRoom.form.input {
+    background: none;
+    border: none;
+    border-bottom: solid black 0.2px;
+    flex-grow: 2;
+    font-size: 1em;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    transition: border-color 0.1s;
+}
+
+.CreateRoom.form:focus {
+    border-color: #e86a17;
+}
+
+.CreateRoom.form.button-bar {
+    min-width: 50%;
+    margin: 1em 0;
+}
+
+.CreateRoom.form.button-bar > .button {
+    color: black;
+    border-radius: 5px;
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.75em;
+    width: 100%;
+    
+}
+
+.CreateRoom.form.button-bar > .button[type=submit] {
+    background-color: #73cd4b;
+}
+
+.CreateRoom.form.button-bar > .button[type=submit]:hover {
+    background-color: #B7EEA0;
+}
+
+.CreateRoom.form.button-bar > .button[type=button] {
+    background-color: #ffcc00;
+}
+
+.CreateRoom.form.button-bar > .button[type=button]:hover {
+    background-color: #FFE064;
+}
