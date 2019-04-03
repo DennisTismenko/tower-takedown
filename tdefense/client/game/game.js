@@ -12,7 +12,7 @@ import Over from './over.js';
 
 //const socket = io.connect();
 
-const game = (connection, mapType, weapons, level) => {
+const game = (connection, mapType, weapons, level, host) => {
   const config = {
     type: Phaser.AUTO,
     parent: 'content',
@@ -151,28 +151,18 @@ const game = (connection, mapType, weapons, level) => {
       handleMessage(data);
     });
 
-
-    //alert(weapons);
-    //alert(mapType);
     this.player0 = null;
     this.player1 = null;
-    // If weapons is greater than 1 is not null then playerNumber is 1
-    if (weapons.length > 1) {
-      this.playerNumber = 1;
-      // Send host this player weapon
-      this.connection.send(['setWeapon', weapons[1]]);
-    } else {
+    console.log(host);
+    if (host) {
       this.playerNumber = 0;
+    } else {
+      this.playerNumber = 1;
     }
 
-    // Initialize the game if the map is given
-    if (mapType != null) {
-      this.connection.send(['map', mapType]);
-      initialized = true;
-      initializeGame(mapType);
-    }
+    initializeGame(mapType);
 
-      this.passingData = {win: false, players: 2, lvl: level, connection: connection, player: this.playerNumber};
+    this.passingData = {win: false, players: 2, lvl: level, connection: connection, player: this.playerNumber};
 
   }
 

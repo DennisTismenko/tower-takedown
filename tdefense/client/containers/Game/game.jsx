@@ -18,6 +18,7 @@ class Game extends Component {
             weapons: [],
             map: null,
             level: null,
+            host: null,
             gotMapInfo: false,
             gotWeaponInfo: false
         };
@@ -62,8 +63,9 @@ class Game extends Component {
         this.setState({ gameInstance });
     }
 
-    getData() {
+    getData(host) {
         const room = this.props.location.state.room;
+        this.setState({ host: host });
         // Get the map
         this.context.socket.emit('retrieveStatInfo', room.gameAdmin, data => {
             let map = data.map;
@@ -119,7 +121,7 @@ class Game extends Component {
                     connection.send(this.context.inGameName);
                 });
             });
-            this.getData();
+            this.getData(true);
             this.context.socket.emit('establishHost', room.name);
         } else {
             // NON-HOST
@@ -134,9 +136,9 @@ class Game extends Component {
                         this.storeResults(data[1]);
                     }
                 });
-                this.getData();
+                this.getData(false);
             }
-            
+
             this.context.socket.emit('getHostState', room.name, ready => {
                 if (ready) {
                     connectToHost();
