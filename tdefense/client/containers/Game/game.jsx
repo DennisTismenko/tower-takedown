@@ -20,7 +20,8 @@ class Game extends Component {
             level: null,
             host: null,
             gotMapInfo: false,
-            gotWeaponInfo: false
+            gotWeaponInfo: false,
+            peer: null
         };
     }
 
@@ -114,21 +115,24 @@ class Game extends Component {
         // const peer = new Peer(this.context.inGameName, {host: 'localhost', port: 9000, path: '/p2p'}); // DEV
         if (this.context.inGameName === room.players[0]) {
             // HOST
+            peer.on('open', id => {
+                // console.log(`Sending HOST establishment signal: ${id}`);
+                this.context.socket.emit('establishHost', room.name);
+            });
             peer.on('connection', connection => {
-                this.setState({ connection });
+                this.setState({ peer, connection });
                 connection.on('data', data => {
-                    //console.log(data);
                     connection.send(this.context.inGameName);
                 });
             });
             this.getData(true);
-            this.context.socket.emit('establishHost', room.name);
         } else {
             // NON-HOST
             const connectToHost = () => {
                 const connection = peer.connect(room.players[0]);
+                // console.log(`Connection: ${connection}`);
                 connection.on('open', () => {
-                    this.setState({ connection });
+                    this.setState({ peer, connection });
                     connection.send(this.context.inGameName);
                 });
                 connection.on('data', data => {
@@ -140,10 +144,12 @@ class Game extends Component {
             }
 
             this.context.socket.emit('getHostState', room.name, ready => {
+                // console.log(`Retrieving HOST READY state: ${ready}`)
                 if (ready) {
                     connectToHost();
                 } else {
                     this.context.socket.on('hostEstablished', () => {
+                        // console.log('Connection to HOST established.');
                         connectToHost();
                     })
                 }
@@ -159,6 +165,10 @@ class Game extends Component {
     componentWillUnmount() {
         if (this.state.gameInstance) {
             this.state.gameInstance.destroy();
+        }
+        if (this.state.peer) {
+            // If ever implementing reconnection in the future, this needs to be changed to peer.disconnect();
+            this.state.peer.destroy();
         }
         this.unmountSocket();
     }

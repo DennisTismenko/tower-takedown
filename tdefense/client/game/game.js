@@ -211,7 +211,7 @@ const game = (connection, mapType, weapons, level, host) => {
         scene.weapons.add(weapon1);
       }
     }
-
+    console.log(initialized);
     // If game has loaded then accept other types of messages
     if (initialized) {
       // If it is the church map, then check for laser switch messages
@@ -219,6 +219,7 @@ const game = (connection, mapType, weapons, level, host) => {
         switchLaser();
       }
       // Handle player actions
+      console.log(otherPlayer.active);
       if (otherPlayer.active) {
         if (data == 'left') {
           otherPlayer.moveLeft();
