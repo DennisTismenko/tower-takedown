@@ -44,8 +44,8 @@ const PEER_PORT = 9000;
 
 // CORS
 const corsOptions = {
-    origin: ['https://towertakedowngame.com', 'http://towertakedowngame.com', 'http://localhost:3000'], // Remove localhost for PROD
-    // origin: ['https://towertakedowngame.com', 'http://towertakedowngame.com'], 
+    // origin: ['https://towertakedowngame.com', 'http://towertakedowngame.com', 'http://localhost:3000'], // Remove localhost for PROD
+    origin: ['https://towertakedowngame.com', 'http://towertakedowngame.com'], 
     credentials: true
 }
 app.use(cors(corsOptions));
@@ -59,8 +59,8 @@ const sessionMiddleware = session({
     cookie: {
         maxAge: 30 * 60 * 1000,
         httpOnly: true,
-        // sameSite: true, // Enable for PROD
-        // secure: true
+        sameSite: true, // Enable for PROD
+        secure: true
     },
     proxy: true
 });
@@ -71,10 +71,10 @@ io.use((socket, next) => {
 
 app.use(sessionMiddleware);
 
-app.use((req, res, next) => {
-    console.log(`BACKEND ${req.method} ${req.url} ${JSON.stringify(req.body)}`);
-    next();
-});
+// app.use((req, res, next) => {
+//     console.log(`BACKEND ${req.method} ${req.url} ${JSON.stringify(req.body)}`);
+//     next();
+// });
 peerApp.use((req, res, next) => {
     console.log(`P2P ${req.method} ${req.url} ${JSON.stringify(req.body)}`);
     next();

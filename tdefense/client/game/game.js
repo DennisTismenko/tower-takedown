@@ -153,7 +153,6 @@ const game = (connection, mapType, weapons, level, host) => {
 
     this.player0 = null;
     this.player1 = null;
-    console.log(host);
     if (host) {
       this.playerNumber = 0;
     } else {
@@ -163,6 +162,7 @@ const game = (connection, mapType, weapons, level, host) => {
     initializeGame(mapType);
 
     this.passingData = {win: false, players: 2, lvl: level, connection: connection, player: this.playerNumber};
+    initialized = true;
 
   }
 
@@ -200,18 +200,6 @@ const game = (connection, mapType, weapons, level, host) => {
   }
 
   function handleMessage(data) {
-    if (Array.isArray(data)) {
-      if ((data[0] == 'map') && !initialized) {
-        initialized = true;
-        initializeGame(data[1]);
-      } else if ((data[0] == 'setWeapon') && !initialized) {
-        weapons.push(data[1]);
-      } else if ((data[0] == 'setWeapon') && initialized) {
-        let weapon1 = new Weapon(scene, 120, 400, data[1], scene.player1);
-        scene.weapons.add(weapon1);
-      }
-    }
-    console.log(initialized);
     // If game has loaded then accept other types of messages
     if (initialized) {
       // If it is the church map, then check for laser switch messages
@@ -219,7 +207,6 @@ const game = (connection, mapType, weapons, level, host) => {
         switchLaser();
       }
       // Handle player actions
-      console.log(otherPlayer.active);
       if (otherPlayer.active) {
         if (data == 'left') {
           otherPlayer.moveLeft();

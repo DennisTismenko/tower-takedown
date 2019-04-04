@@ -5,7 +5,7 @@ import './game.css';
 import AuthContext from '../../context/AuthContext';
 import Peer from 'peerjs';
 import Spinner from '../../components/Spinner/Spinner';
-import Credentials from './credentials';
+import Credentials from '../../credentials';
 
 class Game extends Component {
     constructor(props) {
@@ -111,16 +111,19 @@ class Game extends Component {
 
     initRTC(iceServers) {
         const room = this.props.location.state.room;
-        const peer = new Peer(this.context.inGameName, { host: 'server.towertakedowngame.com', secure: true, path: '/p2p', config: iceServers }); // PROD
+        const peer = new Peer(this.context.inGameName, { host: 'server.towertakedowngame.com', secure: true, path: '/p2p', config: { iceServers: [iceServers]}, debug: 1 }); // PROD
         // const peer = new Peer(this.context.inGameName, {host: 'localhost', port: 9000, path: '/p2p'}); // DEV
         if (this.context.inGameName === room.players[0]) {
             // HOST
             peer.on('open', id => {
                 // console.log(`Sending HOST establishment signal: ${id}`);
+                this.setState({ peer });
                 this.context.socket.emit('establishHost', room.name);
             });
             peer.on('connection', connection => {
-                this.setState({ peer, connection });
+                connection.on('open', () => {
+                    this.setState({ connection });
+                });
                 connection.on('data', data => {
                     connection.send(this.context.inGameName);
                 });
@@ -128,11 +131,14 @@ class Game extends Component {
             this.getData(true);
         } else {
             // NON-HOST
+            peer.on('open', id => {
+                this.setState({ peer });
+            });
             const connectToHost = () => {
                 const connection = peer.connect(room.players[0]);
                 // console.log(`Connection: ${connection}`);
                 connection.on('open', () => {
-                    this.setState({ peer, connection });
+                    this.setState({ connection });
                     connection.send(this.context.inGameName);
                 });
                 connection.on('data', data => {
