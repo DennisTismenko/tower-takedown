@@ -1,6 +1,10 @@
-# CSCC09 Project: Tower Takedown
+<div align="center">
+   <h1>Tower Takedown</h1>
+</div>
 
-Application URL: towertakedowngame.com
+## Description of Application
+
+A multiplayer tower defense game that syncs up real time player actions, where players can team up to raid another player's tower. The goal is to use resources to build up your tower defenses to protect against enemy raids, and team up with other players to raid other towers to gain resources.
 
 ## Team
 
@@ -8,48 +12,7 @@ Application URL: towertakedowngame.com
 
 * Angela Zhu
 
-* Dennis Tismenko
-
-## Description of Application
-
-A multiplayer tower defense game that syncs up real time player actions, where players can team up to raid another player's tower. The goal is to use resources to build up your tower defenses to protect against enemy raids, and team up with other players to raid other towers to gain resources.
-
-## Key Features for Beta
-
-* Functioning game
-
-* Frontend for the login, registration, and lobbies
-
-* Backend to support login and registration with a database using MongoDB
-
-* Basic thematic layout for game
-
-* Specific gameplay features/rules to be implemented:
-
-    * one default map for now
-
-    * working enemies, laser turrets, tower, controllable player, and player weapons
-    
-    * health bar for the tower and player
-
-## Additional Features for Final
-
-* Private game lobby for creating and joining rooms.
-
-* Account to support upgrading tower defenses.
-
-* Specific gameplay features for final
-
-    * multiple players and multiple lobbies
-
-    * multiple enemy types
-
-    * multiple default map choices
-
-    * resources are gained from winning a raid.
-    
-    * resources are gained from player tower defeating a raiding team.
-    
+* Dennis Tismenko    
 
 ## Technology
 
