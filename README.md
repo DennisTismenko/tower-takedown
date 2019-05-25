@@ -6,6 +6,12 @@
 
 A multiplayer tower defense game that syncs up real time player actions, where players can team up to raid another player's tower. The goal is to use resources to build up your tower defenses to protect against enemy raids, and team up with other players to raid other towers to gain resources.
 
+## Gameplay
+
+<div align="center">
+   <img src="media/gameplay25fps.gif"/>
+</div>
+
 ## Team
 
 * Michelle Pasquill
