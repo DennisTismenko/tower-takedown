@@ -1,5 +1,5 @@
 <div align="center">
-   <h1>Tower Takedown</h1>
+   <img src="game_title.png"/>
 </div>
 
 ## Description of Application
